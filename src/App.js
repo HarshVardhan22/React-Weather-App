@@ -19,17 +19,17 @@ function App() {
       .then((res) => res.json())
       .then((data) => data);
 
-      if(city && country){
+      if(city && country && apiData.sys){
       setWeather({
         data: apiData,
         city: apiData.city,
         country: apiData.sys.country,
         description: apiData.weather[0].description,
-        temperature: apiData.main.temp,
+        temperature:  Math.round(apiData.main.temp * 9/5 - 459.67),
         error: "",
       });
     }
-    
+
      else{
       setWeather({
         data: '',
@@ -37,7 +37,7 @@ function App() {
         country: '',
         description: '',
         temperature: '',
-        error: "Please enter both City and Country",
+        error: "Please enter valid City and Country",
       });
     }
   }
