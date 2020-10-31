@@ -7,3 +7,22 @@ input{
     text-align: center;
 }
 
+button{
+    box-sizing: border-box;
+    height: 30px;
+    font-size:16px;
+    font-weight: bold;
+    text-align: center !important;
+}
+
+@media screen and (max-width: 650px) {
+    form {
+      display : flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+  }
